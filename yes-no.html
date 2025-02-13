@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: #ffdde1;
+            color: #333;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-family: 'Dancing Script', cursive;
+            color: #d63384;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #ff69b4;
+            border: none;
+            color: white;
+            border-radius: 20px;
+            margin: 20px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you love me, Vinny? 💖</h1>
+    <button class="button" onclick="selectYes()">Yes</button>
+    <button class="button" onclick="selectNo()">No</button>
+
+    <script>
+        function selectYes() {
+            localStorage.setItem("yesSelected", "true");
+            window.location.href = "love-letters.html";
+        }
+
+        function selectNo() {
+            window.location.href = "no.html";
+        }
+
+        // If "Yes" was already selected, go straight to main page
+        if (localStorage.getItem("yesSelected") === "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

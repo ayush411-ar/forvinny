@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letters for You</title>
+    <style>
+        body {
+            text-align: center;
+            background: #ffe4e1;
+            overflow: hidden;
+            font-family: 'Dancing Script', cursive;
+        }
+        .love-letter {
+            position: absolute;
+            font-size: 2em;
+            color: red;
+            opacity: 0;
+            animation: float 3s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Thousands of Love Letters for You ❤️</h1>
+
+    <script>
+        function createLoveLetter() {
+            const letter = document.createElement("div");
+            letter.classList.add("love-letter");
+            letter.innerHTML = "💌";
+            letter.style.left = Math.random() * 100 + "vw";
+            letter.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(letter);
+            setTimeout(() => letter.remove(), 3000);
+        }
+        setInterval(createLoveLetter, 100);
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 4000); // Redirect after animation
+    </script>
+</body>
+</html>
